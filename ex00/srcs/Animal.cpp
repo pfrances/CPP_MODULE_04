@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/11 18:02:23 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:15:37 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ Animal::~Animal( void ) {
 void	Animal::makeSound( void ) const {
 	std::cout << "[Animal] *animal sound* " << std::endl;
 }
-
 
 std::string Animal::getType( void ) const {
 	return this->type;

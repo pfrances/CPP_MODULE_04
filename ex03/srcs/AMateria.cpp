@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/12 17:46:33 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:23:13 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ AMateria::AMateria(const AMateria& other) : type(other.type) {
 
 AMateria&	AMateria::operator=(const AMateria& other) {
 	if (this != &other) {
-		this->type = other.type;
+		this->type = other.type; // make more sens that just write (void)other;
 	}
 	//std::cout << "[AMateria] asignment called." << std::endl;
 	return *this;
