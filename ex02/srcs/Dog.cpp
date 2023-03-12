@@ -6,19 +6,19 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/12 22:39:41 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:47:00 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog( void ) : Animal() {
+Dog::Dog( void ) : AAnimal() {
 	this->type = "Dog";
 	this->MyBrain = new Brain();
 	std::cout << "[Dog] default constructor called." << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other), MyBrain(new Brain()) {
+Dog::Dog(const Dog& other) : AAnimal(other), MyBrain(new Brain()) {
 	for (int i = 0; i < 100; i++)
 	{
 		this->MyBrain->ideas[i] = other.MyBrain->ideas[i];

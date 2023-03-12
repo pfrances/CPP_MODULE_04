@@ -6,19 +6,19 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/12 22:38:21 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:46:48 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
-Cat::Cat( void ) : Animal() {
+Cat::Cat( void ) : AAnimal() {
 	this->type = "Cat";
 	this->MyBrain = new Brain();
 	std::cout << "[Cat] default constructor called." << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other), MyBrain(new Brain()) {
+Cat::Cat(const Cat& other) : AAnimal(other), MyBrain(new Brain()) {
 	for (int i = 0; i < 100; i++)
 	{
 		this->MyBrain->ideas[i] = other.MyBrain->ideas[i];
