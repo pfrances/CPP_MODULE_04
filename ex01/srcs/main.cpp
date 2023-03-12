@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/01 21:38:04 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/12 22:19:29 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:45:02 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,10 @@ int main(void)
 
 	Cat4.setIdeas("test");
 	Cat4.getIdeas();
+
+	std::cout << std::endl;
+
+	Cat2.getIdeas();
 
 	std::cout << std::endl;
 

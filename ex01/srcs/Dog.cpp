@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/11 19:09:41 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:39:41 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Dog::Dog( void ) : Animal() {
 	std::cout << "[Dog] default constructor called." << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other) {
-	this->MyBrain = new Brain();
-	for (int i = 0; i < 100; i++) {
+Dog::Dog(const Dog& other) : Animal(other), MyBrain(new Brain()) {
+	for (int i = 0; i < 100; i++)
+	{
 		this->MyBrain->ideas[i] = other.MyBrain->ideas[i];
 	}
 	std::cout << "[Dog] copy constructor called." << std::endl;
@@ -28,8 +28,13 @@ Dog::Dog(const Dog& other) : Animal(other) {
 
 Dog&	Dog::operator=(const Dog& other) {
 	if (this != &other) {
+		delete MyBrain;
+		this->MyBrain = new Brain();
+		for (int i = 0; i < 100; i++)
+		{
+			this->MyBrain->ideas[i] = other.MyBrain->ideas[i];
+		}
 		this->type = other.type;
-		this->MyBrain = other.MyBrain;
 	}
 	std::cout << "[Dog] asignment called." << std::endl;
 	return *this;

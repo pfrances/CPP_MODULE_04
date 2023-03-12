@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/11 19:06:09 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:38:21 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ Cat::Cat( void ) : Animal() {
 	std::cout << "[Cat] default constructor called." << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other) {
-	this->MyBrain = new Brain();
-	for (int i = 0; i < 100; i++) {
+Cat::Cat(const Cat& other) : Animal(other), MyBrain(new Brain()) {
+	for (int i = 0; i < 100; i++)
+	{
 		this->MyBrain->ideas[i] = other.MyBrain->ideas[i];
 	}
 	std::cout << "[Cat] copy constructor called." << std::endl;
@@ -28,7 +28,12 @@ Cat::Cat(const Cat& other) : Animal(other) {
 
 Cat&	Cat::operator=(const Cat& other) {
 	if (this != &other) {
-		this->MyBrain = other.MyBrain;
+		delete MyBrain;
+		this->MyBrain = new Brain();
+		for (int i = 0; i < 100; i++)
+		{
+			this->MyBrain->ideas[i] = other.MyBrain->ideas[i];
+		}
 		this->type = other.type;
 	}
 	std::cout << "[Cat] asignment called." << std::endl;

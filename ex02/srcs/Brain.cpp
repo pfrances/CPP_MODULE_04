@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/03 21:57:59 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/11 18:29:40 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/12 22:30:15 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,19 @@ Brain::Brain( void ) {
 	std::cout << "[Brain] default constructor called." << std::endl;
 }
 
-Brain::Brain(const Brain& other) : ideas(other.ideas) {
+Brain::Brain(const Brain& other) {
+	for (int i = 0; i < 100; i++)
+	{
+		this->ideas[i] = other.ideas[i];
+	}
 	std::cout << "[Brain] copy constructor called." << std::endl;
 }
 
 Brain&	Brain::operator=(const Brain& other) {
 	if (this != &other) {
-		size_t	i = 0;
-		while (i < 100)
+		for (int i = 0; i < 100; i++)
 		{
 			this->ideas[i] = other.ideas[i];
-			i++;
 		}
 	}
 	std::cout << "[Brain] asignment called." << std::endl;
