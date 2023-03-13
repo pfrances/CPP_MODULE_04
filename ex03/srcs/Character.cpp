@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 21:12:38 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/12 18:06:38 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:58:15 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void Character::equip(AMateria* m) {
 			return ;
 		}
 	}
+	delete m;
 }
 
 void Character::unequip(int idx) {

@@ -6,7 +6,7 @@
 /*   By: pfrances <pfrances@student.42tokyo.jp>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 21:12:48 by pfrances          #+#    #+#             */
-/*   Updated: 2023/03/12 16:40:16 by pfrances         ###   ########.fr       */
+/*   Updated: 2023/03/13 16:57:55 by pfrances         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	MateriaSource::learnMateria(AMateria *m) {
 			return ;
 		}
 	}
+	delete m;
 }
 
 AMateria* MateriaSource::createMateria(std::string const & type) {
